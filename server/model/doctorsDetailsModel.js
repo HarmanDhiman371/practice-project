@@ -23,8 +23,8 @@ const DoctorSchema = mongoose.Schema({
     email:{
         type: String,
         require : [ true , "please add your age"],
-    }
-    
+    },
+   
 },
 {
     timestamps : true ,

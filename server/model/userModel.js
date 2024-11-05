@@ -31,7 +31,8 @@ const userSchema = mongoose.Schema({
     password:{
         type : String,
         require : [ true , "please add your passwprd"],
-    }
+    },
+   
 },
 {
     timestamps : true ,
