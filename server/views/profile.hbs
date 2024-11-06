@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <img src={{image}} alt="">
+    {{!-- <img src="{{image}}"alt="profie img"> --}}
+    {{#each profile as |b|}}
+      <h4>{{ b.title}}</h4>
+      <img src = {{b.image}} alt = " ">
+    {{/each}}
 </body>
 </html>
