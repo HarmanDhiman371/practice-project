@@ -69,27 +69,20 @@ const storage = multer.diskStorage({
 //   const upload = multer({ storage: storage })
  const upload = multer({storage : storage});
 app.post("/profile", upload.single("avatar"), async function(req, res , next) {
-    
     console.log(req.body);
     console.log(req.file);
     // console.log(req.file.path)
     let {title} = req.body;
     let {path} = req.file;
-    // let newProfie= new Profie({image:req.file.path});
-    // await newProfie.save()
-    // res.render("profile",{image:req.file.path})
-    // const imagePath = "/uploads/" + req.file.filename.replace(/\\/g, "/");
     let newProfie = new Profie({ title:title ,  image: path });
     await newProfie.save();
     res.render("profile", { image: path });
-    // return res.redirect("/home");
+    
 });
 app.get("/profile",async(req,res)=>{
     
     let allblog=await Profie.find();
-    // console.log(allblog)
-    // console.warn("THISHSHSHSH")
-    console.log("chalgya");
+    console.log("chalgya oyee");
     
     res.render("profile",{profile : allblog});
 }) 
