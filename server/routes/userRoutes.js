@@ -28,7 +28,7 @@ const updateUser = async (req, res) => {
             res.send({ message: "User updated successfully", user });
         } else {
             res.status(404).send({ message: "User not found" });
-        }
+        npm}
     } catch (error) {
         res.status(500).send({ message: "Error updating user details" });
     }
